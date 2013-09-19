@@ -5,8 +5,8 @@
         <button type="button" class="btn btn-navbar visible-phone" id="menu-toggler"> <i class="glyphicon glyphicon-th-list"></i></button>
         
               <div class="brand">
-                <h4>Tata Steel Ltd.</h4>
-                <b>Compliance Manager v1.0</b>
+                <h4>ABC Enterprise</h4>
+                <b>T4 CMSnCom v1.0</b>
             </div>
         <div class="nav-collapse collapse">
           <ul class="nav navbar-nav pull-right">
@@ -20,12 +20,11 @@
                     <div class="clearfix"></div>              
                 </li>              
                 <li class="divider"></li>               
-                <li><div class="alginBtn"><a href="../default.aspx" class="btn btn-danger">Logout</a></div></li>
+                <li><div class="alginBtn"><a href="../index.php" class="btn btn-danger">Logout</a></div></li>
               </ul>
             </li>
             <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-cog"></i> Settings <b class="caret"></b></a>
-              <ul class="dropdown-menu">                
-                <li><a href="#"><i class="glyphicon glyphicon-asterisk"></i>Admin Console</a></li>
+              <ul class="dropdown-menu">                            
                 <li><a href="#"><i class="glyphicon glyphicon-lock"></i> Change Password</a></li>
               </ul>
             </li>
