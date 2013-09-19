@@ -1,0 +1,17 @@
+h1, h2, h3, h4, h5, h6 { padding:0; margin:0;}
+.input-prepend.input-padding-increased input { height: 20px; padding: 8px 10px; width: 290px;}
+.navbar-inner { height:52px;}
+#breadcrumbs {border-bottom:1px solid #ccc; background:#ececec; height:33px;}
+#breadcrumbs .breadcrumb-button { float:left;}
+#breadcrumbs .breadcrumb-button .breadcrumb-label { border-bottom:0;}
+#breadcrumbs .breadcrumb-button .breadcrumb-arrow span { background-color:#000; background:url(../../img/BreadcombArrow.png) no-repeat 0 0; width:18px;}
+#breadcrumbs .breadcrumb-button .breadcrumb-arrow {background:url(../../img/BreadcombArrow.png) no-repeat 0 0; width:18px; height:31px;}
+.ui-select select { border:0;}
+.ui-select { background:none; border:0; overflow:visible;}
+.form-page .form-wrapper .field-box { margin-bottom:0;}
+.row-fluid .span7 { width:57%; margin-left:0;}
+.modal-header { height:20px;}
+
+
+
+
