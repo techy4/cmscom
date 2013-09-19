@@ -15,7 +15,7 @@
 <body>
 <div class="single-widget-container">
 <div class="login-widget">
-<h2><img src="img/logoHome.png"></h2>
+<h2>ABC Enterprise</h2>
 <div class="widget">
     <div class="header"><h4>Login to your account</h4></div>
         <div class="body">
