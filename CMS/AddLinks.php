@@ -109,8 +109,15 @@
                     <input type="text" />
                   </div>
                   <div class="field-box">
-                  <label>&nbsp;</label>
-                   <label class="checkbox"><input type="checkbox" /> Required Content</label>
+                  <label>Is page need content</label>
+                  <label class="radio">
+                                        <input type="radio" name="optionContent" checked> 
+                                        Yes
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" name="optionContent">
+                                        No
+                                  </label>
                  </div>
                   
                    <div class="field-box">
@@ -140,6 +147,9 @@
                      <div class="ui-select">
                       <select>
                         <option selected>-- Select --</option>
+                         <option>CMS</option>
+                         <option>Feedback</option>
+                         <option>Contact Us</option>
                       </select>
                     </div>
                   </div>
