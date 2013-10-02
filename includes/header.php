@@ -1,4 +1,7 @@
  <!--[if lt IE 8]><link rel="stylesheet" href="../css/generic/ie.css"><![endif]-->
+<?php 
+include ("../SessionCheck.php");
+?>
  <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
