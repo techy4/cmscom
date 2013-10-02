@@ -1,0 +1,72 @@
+Options +FollowSymlinks
+   
+RewriteEngine On # Turn on the rewriting engine
+RewriteCond %{REQUEST_METHOD} ^TRACE 
+RewriteRule .* - [F]
+
+
+
+# Application URL, Created By Sudam Chandra Pana on 09th April 2013# 
+
+# Application For Login Purpose# 
+		RewriteRule    ^home/?$										   										index.php
+		RewriteRule    ^home/([0-9]+)?$																		index.php?splChar=$1
+		RewriteRule    ^welcome/?$									    									http://localhost:7001/cmscom/Dashboard/dashboard.php
+		RewriteRule    ^logout/?$									    									http://localhost:7001/cmscom/index.php
+		RewriteRule    ^forgotPassword/?$																	forgetPassword.php
+
+# Application For Manage User# 
+		RewriteRule    ^viewUser/([0-9]+)/([0-9]+)?$														manageUser/viewUser.php?GL=$1&PL=$2
+		RewriteRule    ^addUser/([0-9]+)/([0-9]+)?$															manageUser/addUser.php?GL=$1&PL=$2
+		RewriteRule    ^addUser/([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)?$	    						manageUser/addUser.php?GL=$1&PL=$2&ID=$3&RC=$4&PG=$5
+		RewriteRule    ^addUser/([0-9]+)/([0-9]+)/([0-9]+)?$	    										manageUser/addUser.php?GL=$1&VF=$2&ID=$3
+		RewriteRule    ^viewUser/([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)?$										manageUser/viewUser.php?GL=$1&PL=$2&RC=$3&PG=$4
+		RewriteRule    ^userId/([0-9]+)/([a-zA-Z0-9-]*)?$													manageUser/userid.php?UID=$1&ID=$2
+		RewriteRule    ^viewAssignRole/([0-9]+)/([0-9]+)?$													manageUser/viewAssignRole.php?GL=$1&PL=$2
+		RewriteRule    ^addAssignRole/([0-9]+)/([0-9]+)?$													manageUser/addAssignRole.php?GL=$1&PL=$2
+		RewriteRule    ^changeAuthority/([0-9]+)/([0-9]+)?$													manageUser/changeAuthority.php?GL=$1&PL=$2
+		RewriteRule		^viewUser/([0-9]+)/([0-9]+)?$														manageUser/viewUser.php?GL=$1&PL=$2
+		RewriteRule		^profile/([0-9]+)/([0-9]+)?$														manageUser/UserProfile.php?GL=$1&ID=$3
+		RewriteRule    ^addLocation/([0-9]+)/([0-9]+)?$				    									manageUser/addLocation.php?GL=$1&PL=$2
+		RewriteRule    ^addLocation/([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)?$									manageUser/addLocation.php?GL=$1&PL=$2&RC=$3&PG=$4
+		RewriteRule    ^addLocation/([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)?$	    					manageUser/addLocation.php?GL=$1&PL=$2&ID=$3&RC=$4&PG=$5
+		RewriteRule    ^viewLocation/([0-9]+)/([0-9]+)?$													manageUser/viewLocation.php?GL=$1&PL=$2
+		RewriteRule    ^viewLocation/([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)?$									manageUser/viewLocation.php?GL=$1&PL=$2&RC=$3&PG=$4
+		RewriteRule    ^addDepartment/([0-9]+)/([0-9]+)?$													manageUser/addDepartment.php?GL=$1&PL=$2
+		RewriteRule    ^addDepartment/([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)?$	    				manageUser/addDepartment.php?GL=$1&PL=$2&ID=$3&RC=$4&PG=$5
+		RewriteRule    ^viewDepartment/([0-9]+)/([0-9]+)?$													manageUser/viewDepartment.php?GL=$1&PL=$2
+		RewriteRule    ^viewDepartment/([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)?$								manageUser/viewDepartment.php?GL=$1&PL=$2&RC=$3&PG=$4
+		RewriteRule    ^addDesignation/([0-9]+)/([0-9]+)?$													manageUser/addDesignation.php?GL=$1&PL=$2
+		RewriteRule    ^addDesignation/([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)?$	    				manageUser/addDesignation.php?GL=$1&PL=$2&ID=$3&RC=$4&PG=$5
+		RewriteRule    ^viewDesignation/([0-9]+)/([0-9]+)?$													manageUser/viewDesignation.php?GL=$1&PL=$2
+		RewriteRule    ^viewDesignation/([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)?$								manageUser/viewDesignation.php?GL=$1&PL=$2&RC=$3&PG=$4
+		
+		
+# Application For Manage Stock# 
+		RewriteRule    ^stockSummery/([0-9]+)/([0-9]+)?$													manageStock/stockSummery.php?GL=$1&PL=$2
+		RewriteRule    ^newOrder/([0-9]+)/([0-9]+)?$														manageStock/newOrder.php?GL=$1&PL=$2
+		RewriteRule    ^approvedOrder/([0-9]+)/([0-9]+)?$													manageStock/approvedOrder.php?GL=$1&PL=$2
+		RewriteRule    ^rejectedOrder/([0-9]+)/([0-9]+)?$													manageStock/rejectedOrder.php?GL=$1&PL=$2
+		RewriteRule    ^loadFunction/([0-9]+)?$																manageStock/loadFunction.php?SID=$1	
+		RewriteRule    ^loadProduct/([0-9]+)?$																manageStock/loadProduct.php?PID=$1		
+		
+# Application For Manage Activity# 
+		RewriteRule    ^dailyActivity/([0-9]+)/([0-9]+)?$													manageActivity/dailyActivity.php?GL=$1&PL=$2
+		RewriteRule    ^monthlyActivity/([0-9]+)/([0-9]+)?$													manageActivity/monthlyActivity.php?GL=$1&PL=$2
+		
+# Application For Manage Reports# 
+		RewriteRule    ^attendance/([0-9]+)/([0-9]+)?$														manageReports/attendance.php?GL=$1&PL=$2
+		RewriteRule    ^attendanceMap/([0-9]+)/([0-9]+)?$													manageReports/attendanceMap.php?GL=$1&PL=$2
+		
+# Application For Manage Application# 
+		RewriteRule    ^viewUser/([0-9]+)?$																	manageApplication/viewUser.php?GL=$1
+		RewriteRule    ^addUser/([0-9]+)?$																	manageApplication/addUser.php?GL=$1
+		RewriteRule    ^viewAssignRoll/([0-9]+)?$															manageApplication/viewAssignRoll.php?GL=$1
+		RewriteRule    ^addAssignRoll/([0-9]+)?$															manageApplication/addAssignRoll.php?GL=$1
+		RewriteRule    ^attendance/([0-9]+)?$																manageApplication/attendance.php?GL=$1
+		RewriteRule    ^stockReport/([0-9]+)?$																manageApplication/stockReport.php?GL=$1
+		RewriteRule    ^orderRequest/([0-9]+)?$																manageApplication/orderRequest.php?GL=$1
+		RewriteRule    ^takeAction/([0-9]+)?$																manageApplication/takeAction.php?GL=$1
+		
+# Application For Settings# 
+		RewriteRule    ^changePassword/([0-9]+)/([0-9]+)?$													settings/changePassword.php?GL=$1&PL=$2		
