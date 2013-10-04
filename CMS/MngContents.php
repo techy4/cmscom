@@ -1,3 +1,6 @@
+<?php 
+ require('MngContents_CB.php');
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -61,7 +64,6 @@
       <div class="padded"> 
         <table class="table table-normal">
           <tr>
-            <th width="25"><input type="checkbox" /></th>
             <th width="35">Sl. #</th>
             <th width="180">Link Name</th>
             <th width="70">Link Type</th>
@@ -69,42 +71,24 @@
             <th>Link Target</th>
             <th width="100">Add Content</th>
           </tr>
+          <?php 
+		
+		while($row= mysqli_fetch_array($result))
+				{
+				$intCount++;
+		  ?>
           <tr>
-            <td><input type="checkbox" /></td>
-            <td>1</td>
-            <td>Link 1</td>
-            <td>External </td>
-            <td>www.google.com</td>
-            <td>New window</td>
-            <td><a href="javascript:openModal({'url':'AddContent.php','headText':'Add Content'});" class="btn btn-mini"><i class="icon-plus"></i></a></td>
+           <td><?php echo  $row["INT_ID"] ?></td>
+            <td><?php echo  $row["LINK_NAME"] ?></td>
+            <td><?php echo  $row["VCH_LINK_TYPE"] ?></td>
+            <td><?php echo $row["FUNCTION_NAME_URL"]?>            
+            </td>
+            <td><?php echo  $row["VCH_LINK_TARGET"] ?></td>
+            <td><a href="javascript:openModal({'url':'<?php echo  $row["VCH_FUN_PAGE"] ?>','headText':'Add Content'});" class="btn btn-mini"><i class="icon-plus"><?php echo  $row["INT_ID"] ?></i></a></td>
           </tr>
-          <tr>
-            <td><input type="checkbox" /></td>
-            <td>2</td>
-            <td>Link 2</td>
-            <td>Internal</td>
-            <td>aboutus.php</td>
-            <td>Same Window</td>
-            <td><a href="#" class="btn btn-mini"><i class="icon-plus"></i></a></td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" /></td>
-            <td>3</td>
-            <td>Link 3</td>
-            <td>External </td>
-            <td>www.google.com</td>
-            <td>Pop UP</td>
-            <td><a href="#" class="btn btn-mini"><i class="icon-plus"></i></a></td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" /></td>
-            <td>4</td>
-            <td>Link 4</td>
-            <td>Internal</td>
-            <td>aboutus.php</td>
-            <td>Same Window</td>
-            <td><a href="#" class="btn btn-mini"><i class="icon-plus"></i></a></td>
-          </tr>
+          <?php 
+		   }
+		  ?>
         </table>
        
         </div>
