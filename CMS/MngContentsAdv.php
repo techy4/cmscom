@@ -134,14 +134,11 @@
                 <div class="clearfix"></div>
               </div>
               <div class="widget-content orange">
-                	<div class="box-content box-statistic">
-                          your current mail id : <span class="text-error">info@gmail.com</span>
-                        </div>
                         <div class="box-content box-statistic">
-                          <span class="text-error">40</span> mail received in this month
+                          <span class="text-error">40</span> Feedbacks recently
                         </div>
               </div>
-              <div class="modal-footer orange"><a href="#" class="btn btn-small"><i class="icon-remove"></i> Remove Link</a> <a href="#" class="btn btn-small"><i class="icon-edit"></i> Manage Content</a></div>
+              <div class="modal-footer orange"><a href="#" class="btn btn-small"><i class="icon-remove"></i> Remove Link</a> <a href="../Feedback/MngFeedback.php" class="btn btn-small"><i class="icon-edit"></i> Manage Feedback</a></div>
             </div>
           </div>
           <!-- end Widget Box 3  -->
@@ -157,7 +154,7 @@
                        <span class="text-error">1</span> contact address added
                     </div>
               </div>
-              <div class="modal-footer red"><a href="#" class="btn btn-small"><i class="icon-remove"></i> Remove Lilnk</a> <a href="#" class="btn btn-small"><i class="icon-edit"></i> Manage Content</a></div>
+              <div class="modal-footer red"><a href="#" class="btn btn-small"><i class="icon-remove"></i> Remove Lilnk</a> <a href="../Contact/ManageContact.php" class="btn btn-small"><i class="icon-edit"></i> Manage Content</a></div>
             </div>
           </div>
           <!-- end Widget Box 4  -->
