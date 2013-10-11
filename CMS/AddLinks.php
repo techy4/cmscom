@@ -1,3 +1,6 @@
+<?php
+    require('AddLinks_CB.php');   
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -13,6 +16,10 @@
 <link rel="stylesheet" href="../css/generic/framework.css">
 <!--modernizr-2.6.2-respond-1.1.0.min.js is for conditional css and javascript-->
 <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+<script src="../js/vendor/jquery-1.9.1.min.js"></script>
+
+<script src="../js/custom/AddLinks.js"></script>
+
 <!--Page Level Variable Declaration-->
 <script>
     var pageConf = {
@@ -74,12 +81,13 @@
           <div class="row-fluid form-wrapper">
             <!-- left column -->
             <div>
-              <form runat="server">
+              <form id="AddLinksForm" action="" method="post">
                 <div class="form-padded">
-                  <div class="field-box">
+                <?php echo $result?>
+                  <div class="field-box" id="divdwnLinkLevel">
                     <label> Link Level</label>
                     <div class="ui-select">
-                      <select>
+                      <select name='dwnLinkLevel' id="dwnLinkLevel">
                         <option selected>-- Select --</option>
                         <option>1</option>
                         <option>2</option>
@@ -90,23 +98,10 @@
                       </select>
                     </div>
                   </div>
-                  <div class="field-box">
-                    <label> 1st Level</label>
-                    <div class="ui-select">
-                      <select>
-                        <option selected>-- Select --</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                      </select>
-                    </div>
-                  </div>
+                  
                   <div class="field-box">
                     <label>Link Name</label>
-                    <input type="text" />
+                    <input type="text" name="txtLinkname" />
                   </div>
                   <div class="field-box">
                   <label>Is page need content</label>
@@ -123,18 +118,18 @@
                    <div class="field-box">
                    <label>Link Type</label>
                                     <label class="radio">
-                                        <input type="radio" name="optionsRadios" id="internal">
+                                        <input type="radio" name="optionsLinkType" id="internal">
                                         Internal
                                     </label>
                                     <label class="radio">
-                                        <input type="radio" name="optionsRadios" id="external">
+                                        <input type="radio" name="optionsLinkType" id="external">
                                         External
                                   </label>
                               </div>           
                   <div class="field-box">
                     <label> Link Target</label>
                     <div class="ui-select">
-                      <select>
+                      <select name="dwnLinkTarget">
                         <option selected>-- Select --</option>
                         <option>New Window</option>
                         <option>Same Window</option>
@@ -145,7 +140,7 @@
                   <div class="field-box" id="internalField">
                     <label> Function Name</label>
                      <div class="ui-select">
-                      <select>
+                      <select name="dwnFunctionName">
                         <option selected>-- Select --</option>
                          <option>CMS</option>
                          <option>Feedback</option>
@@ -155,11 +150,11 @@
                   </div>
                   <div class="field-box noborder" id="externalField">
                     <label> Link URL</label>
-                    <input type="text" />
+                    <input type="text" name="txtLinkUrl" />
                   </div>
                   
                 </div>
-                <div class="formActions"> <a href="#" class="btn btn-success">Submit</a> <a href="#" class="btn btn-danger">Cancel</a> </div>
+                <div class="formActions"> <input type="Submit" value="Submit" name="btnSubmit" class="btn btn-success"> <a href="#" class="btn btn-danger">Cancel</a> </div>
               </form>
             </div>
           </div>
@@ -181,6 +176,7 @@
 <!-- bootstrap-wysihtml5-0.0.2.js for Mange Text Editor -->
 <script src="../js/vendor/bootstrap-wysihtml5-0.0.2.js"></script>
 <script type="text/javascript">
+
         $(function () {
           $("#internalField").hide();
 		  $("#externalField").hide();
