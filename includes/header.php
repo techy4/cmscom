@@ -19,7 +19,7 @@ include ("../SessionCheck.php");
                 	<div class="avatar pull-left">
                       <img src="../img/avatar1.jpg"  width="70" height="70">
                     </div> 
-                    <div class="logName pull-left">Santosh Kumar Panda <br /> <span>Bussiness Solution & Services</span> <br /> <span>Sr.Web Designer</span></div>  
+                    <div class="logName pull-left"><?php echo $_SESSION['userName'];?><br /> <span><?php echo $_SESSION['designation'];?></span></div>  
                     <div class="clearfix"></div>              
                 </li>              
                 <li class="divider"></li>               

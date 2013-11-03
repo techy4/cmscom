@@ -47,10 +47,10 @@ $("#button-toggler").click(function (e) {
 // sidebar menu dropdown toggle
 
 $("#dashboard-menu .dropdown-toggle").click(function (e) {
+													
     e.preventDefault();
     var $item = $(this).parent();
-    var isSubMenuOpen;
-    console.log($item.find(".submenu").is(':hidden'));
+    var isSubMenuOpen;   
     if ($item.find(".submenu").is(':hidden')) {
         $item.find(".submenu").slideDown("fast");
         sessionStorage.activeMenuIndex = $item.index();
@@ -61,10 +61,10 @@ $("#dashboard-menu .dropdown-toggle").click(function (e) {
     $("#dashboard-menu>li").not($item).find(".submenu").slideUp("fast");
 });
 
-if (sessionStorage.activeMenuIndex != "undefined") {
+//if (sessionStorage.activeMenuIndex != "undefined") { 
     //console.log($("#dashboard-menu>li").html());
-    $("#dashboard-menu>li:eq(" + sessionStorage.activeMenuIndex + ")").find(".submenu").show();
-}
+   // $("#dashboard-menu>li:eq(" + sessionStorage.activeMenuIndex + ")").find(".submenu").show();
+//}
 
 
 /* Scroll to Top */

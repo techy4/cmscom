@@ -15,14 +15,13 @@
             $sql ="call usp_admin_login('".$strUser."','".$strPass."','".$intsalt."')";
             $obj->isSpclChar($strUser,'logout');
 			$obj->isSpclChar($strPass,'logout');
-            $result	= $obj->ExecuteQuery($sql);                      
-            echo(mysqli_num_rows($result));
+            $result	= $obj->ExecuteQuery($sql);    
             if(mysqli_num_rows($result)>0)
 			{
 				$row				= mysqli_fetch_assoc($result);	
                  $_SESSION['UserID']			= $strUser;
-			     $_SESSION['userName']		= $row['VCH_FULLNAME'];
-				 $_SESSION['designation']		= $row['VCH_DESIGNATION'];	         
+			     $_SESSION['userName']		= $row['vch_fullname'];
+				 $_SESSION['designation']		= $row['vch_designation'];	         
 				 
 				header("Location: welcome/");
 				

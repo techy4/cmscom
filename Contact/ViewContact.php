@@ -16,7 +16,7 @@
     var pageConf = {
         "breadCrumbs": [
         {
-            "name": "Dashboard",
+            "name": "Home",
             "url": "#",
             "isActive": "true"
         },
@@ -24,50 +24,24 @@
             "name": "CMS"
         },
         {
-            "name": "Manage Category"
+            "name": "View Contact"
         }
     ],
-		"buttons": [
-        {
-            "name": "Add Category",
-            "url": "#",
-            "isActive": "true"
-        },
-        {
-            "name": "Add Sub Category",
-            "url": "AddSubCategory.php"
-        },
-        {
-            "name": "Add Item",
-            "url": "AddItems.php"
-        }
-    ],
-        
+		
         "tabs": [
         {
             "name": "Add",
+            "url": "ManageContact.php"
+        },
+        {
+            "name": "View",
             "url": "#",
             "isActive": "true"
-        },
-        {
-            "name": "View",
-            "url": "ViewCategory.php"
         }
-    ],
+    ],        
         
-        "tabs": [
-        {
-            "name": "Add",
-            "url": "AddCategory.php"           
-        },
-        {
-            "name": "View",
-             "isActive": "true",
-            "url": "#"
-        }
-    ],
         "header": {
-            "text": "View Category",
+            "text": "View  Contact Details",
             //"iconClass": "glyphicon-hdd"
         }
     }
@@ -94,47 +68,58 @@
       <!-- Page Body -->
       <!-- Content Header -->
        <?php include('../includes/Contentheader.php');  ?>
+       
       <!-- end Content Header -->
-      <div class="padded"> 
-        <table class="table table-normal">
+      <div class="padded">
+                    <table class="table table-normal">
           <tr>
             <th width="25"><input type="checkbox" /></th>
-            <th width="35">Sl. #</th>
-            <th width="180">Category  Name</th>
-            <th>Description</th>
-            <th width="40">Edit</th>
-          </tr>
+            <th width="100">Date</th>
+            <th width="200">Company / Name</th>
+            <th width="60">Address</th>
+            <th width="70">Latitude</th>
+            <th width="90">Phone No.</th>
+            <th>eMail ID</th>
+            </tr>
           <tr>
             <td><input type="checkbox" /></td>
-            <td>1</td>
-            <td>Category 1</td>
-            <td>Description</td>
-            <td><a href="AddCategory.php" class="btn btn-mini"><i class="icon-edit"></i></a></td>
-          </tr>
+            <td>15-Sep-2013</td>
+            <td>Santosh Kumar Panda</td>
+            <td><a href="javascript:openModal({'url':'AddressDetails.php','headText':'Address Details'});" class="btn btn-small"><i class="icon-map-marker"></i></a></td>
+            <td>192.0909.787.</td>
+            <td>9861266074</td>
+            <td>info@gmail.com</td>
+            </tr>
           <tr>
             <td><input type="checkbox" /></td>
-            <td>2</td>
-            <td>Category 2</td>
-            <td>Description</td>
-            <td><a href="AddCategory.php" class="btn btn-mini"><i class="icon-edit"></i></a></td>
-          </tr>
+            <td>15-Sep-2013</td>
+            <td>Rasmikant Das</td>
+            <td><a href="#" class="btn btn-small"><i class="icon-map-marker"></i></a></td>
+            <td>192.0909.787.</td>
+            <td>9861266074</td>
+            <td>info@gmail.com</td>
+            </tr>
           <tr>
             <td><input type="checkbox" /></td>
-            <td>3</td>
-            <td>Category 3</td>
-            <td>Description</td>
-            <td><a href="AddCategory.php" class="btn btn-mini"><i class="icon-edit"></i></a></td>
-          </tr>
+            <td>15-Sep-2013</td>
+            <td>Zafir Ahmed</td>
+            <td><a href="#" class="btn btn-small"><i class="icon-map-marker"></i></a></td>
+            <td>192.0909.787.</td>
+            <td>9861266074</td>
+            <td>info@gmail.com</td>
+            </tr>
           <tr>
             <td><input type="checkbox" /></td>
-            <td>4</td>
-            <td>Category 4</td>
-            <td>Description</td>
-            <td><a href="AddCategory.php" class="btn btn-mini"><i class="icon-edit"></i></a></td>
-          </tr>
+            <td>15-Sep-2013</td>
+            <td>XYZ</td>
+            <td><a href="#" class="btn btn-small"><i class="icon-map-marker"></i></a></td>
+            <td>192.0909.787.</td>
+            <td>9861266074</td>
+            <td>info@gmail.com</td>
+            </tr>
         </table>
-       
-        </div>
+<div class="tbl-btm-bar"><a href="#" class="btn btn-danger">Delete</a></div>
+                </div>
       </div>
       <!-- end Page Body -->
     </div>

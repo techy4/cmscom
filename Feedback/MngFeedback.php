@@ -1,6 +1,3 @@
-<?php 
- require('MngContents_CB.php');
-?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -19,7 +16,7 @@
     var pageConf = {
         "breadCrumbs": [
         {
-            "name": "Dashboard",
+            "name": "Home",
             "url": "#",
             "isActive": "true"
         },
@@ -27,13 +24,24 @@
             "name": "CMS"
         },
         {
-            "name": "Manage Contents"
+            "name": "Manage Feedback"
         }
     ],
-        
+		
+        "tabs": [
+        {
+            "name": "Configure eMail",
+            "url": "#",
+            "isActive": "true"
+        },
+        {
+            "name": "View Feedback",
+            "url": "ViewFeedback.php"
+        }
+    ],        
         
         "header": {
-            "text": "Add Contents",
+            "text": "Add  Feedback eMail Details",
             //"iconClass": "glyphicon-hdd"
         }
     }
@@ -60,38 +68,39 @@
       <!-- Page Body -->
       <!-- Content Header -->
        <?php include('../includes/Contentheader.php');  ?>
-      <!-- end Content Header -->
-      <div class="padded"> 
-        <table class="table table-normal">
-          <tr>
-            <th width="35">Sl. #</th>
-            <th width="180">Link Name</th>
-            <th width="70">Link Type</th>
-            <th width="120">Function / URL</th>
-            <th>Link Target</th>
-            <th width="100">Add Content</th>
-          </tr>
-          <?php 
-		
-		while($row= mysqli_fetch_array($result))
-				{
-				$intCount++;
-		  ?>
-          <tr>
-           <td><?php echo  $row["INT_ID"] ?></td>
-            <td><?php echo  $row["LINK_NAME"] ?></td>
-            <td><?php echo  $row["VCH_LINK_TYPE"] ?></td>
-            <td><?php echo $row["FUNCTION_NAME_URL"]?>            
-            </td>
-            <td><?php echo  $row["VCH_LINK_TARGET"] ?></td>
-            <td><a href="javascript:openModal({'url':'<?php echo  $row["VCH_FUN_PAGE"] ?>','headText':'Add Content'});" class="btn btn-mini"><i class="icon-plus"><?php echo  $row["INT_ID"] ?></i></a></td>
-          </tr>
-          <?php 
-		   }
-		  ?>
-        </table>
        
-        </div>
+      <!-- end Content Header -->
+      <div class="padded">
+                    <div class="form-page">
+                        <div class="row-fluid form-wrapper">
+                            <!-- left column -->
+                            <div>
+                                <form runat="server">
+                                <div class="form-padded">
+                                    <div class="field-box">
+                                        <label>To</label>
+                                       <input type="text" />
+                                    </div>
+                                   
+                                    <div class="field-box">
+                                        <label>
+                                            CC:</label>
+                                        <input type="text" />
+                                    </div>
+                                    <div class="field-box noborder">
+                                        <label>
+                                            eMail Subject:</label>
+                                        <input type="text" />
+                                    </div>
+                                </div>
+                                <div class="formActions">
+                                    <a href="#" class="btn btn-success">Submit</a> <a href="#" class="btn btn-danger">Cancel</a>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
       </div>
       <!-- end Page Body -->
     </div>

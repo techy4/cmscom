@@ -27,6 +27,21 @@
             "name": "Manage Items"
         }
     ],
+		"buttons": [
+        {
+            "name": "Add Category",
+            "url": "AddCategory.php"            
+        },
+        {
+            "name": "Add Sub Category",
+            "url": "AddSubCategory.php"
+        },
+        {
+            "name": "Add Item",
+            "url": "#",
+			"isActive": "true"
+        }
+    ],
         
         "tabs": [
         {

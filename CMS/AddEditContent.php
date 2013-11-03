@@ -1,6 +1,3 @@
-<?php 
- require('MngContents_CB.php');
-?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -14,12 +11,13 @@
 <meta name="viewport" content="width=device-width">
 <!--framework.css icluded framework related css files -->
 <link rel="stylesheet" href="../css/generic/framework.css">
+<link rel="stylesheet" href="../css/generic/dashboard.css">
 <!--Page Level Variable Declaration-->
 <script>
     var pageConf = {
         "breadCrumbs": [
         {
-            "name": "Dashboard",
+            "name": "Home",
             "url": "#",
             "isActive": "true"
         },
@@ -33,7 +31,7 @@
         
         
         "header": {
-            "text": "Add Contents",
+            "text": "Add Edit About Us Contents",
             //"iconClass": "glyphicon-hdd"
         }
     }
@@ -56,42 +54,19 @@
   <!-- main container -->
   <div class="content  topSpace">
     <div class="container-fluid">
-     
+      <!--<div class="bk-pos"><a href="MngContentsAdv.php" class="btn btn-small"><i class="icon-backward"></i></a></div>-->
       <!-- Page Body -->
-      <!-- Content Header -->
+      <!-- Content Header -->     
        <?php include('../includes/Contentheader.php');  ?>
       <!-- end Content Header -->
-      <div class="padded"> 
-        <table class="table table-normal">
-          <tr>
-            <th width="35">Sl. #</th>
-            <th width="180">Link Name</th>
-            <th width="70">Link Type</th>
-            <th width="120">Function / URL</th>
-            <th>Link Target</th>
-            <th width="100">Add Content</th>
-          </tr>
-          <?php 
-		
-		while($row= mysqli_fetch_array($result))
-				{
-				$intCount++;
-		  ?>
-          <tr>
-           <td><?php echo  $row["INT_ID"] ?></td>
-            <td><?php echo  $row["LINK_NAME"] ?></td>
-            <td><?php echo  $row["VCH_LINK_TYPE"] ?></td>
-            <td><?php echo $row["FUNCTION_NAME_URL"]?>            
-            </td>
-            <td><?php echo  $row["VCH_LINK_TARGET"] ?></td>
-            <td><a href="javascript:openModal({'url':'<?php echo  $row["VCH_FUN_PAGE"] ?>','headText':'Add Content'});" class="btn btn-mini"><i class="icon-plus"><?php echo  $row["INT_ID"] ?></i></a></td>
-          </tr>
-          <?php 
-		   }
-		  ?>
-        </table>
-       
-        </div>
+      <div class="padded">
+      	<div class="form-page">
+                        <div class="row-fluid form-wrapper srchArea">
+                              <textarea name="" cols="" rows="20" style="width:98%;"></textarea>                  
+                        </div>
+                        <div class="formActions" align="right"> <a href="#" class="btn btn-success">Save Changes</a> <a href="#" class="btn btn-danger">Cancel</a> </div>
+                    </div>
+      </div>
       </div>
       <!-- end Page Body -->
     </div>

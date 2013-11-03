@@ -11,12 +11,13 @@
 <meta name="viewport" content="width=device-width">
 <!--framework.css icluded framework related css files -->
 <link rel="stylesheet" href="../css/generic/framework.css">
+<link rel="stylesheet" href="../css/generic/dashboard.css">
 <!--Page Level Variable Declaration-->
 <script>
     var pageConf = {
         "breadCrumbs": [
         {
-            "name": "Dashboard",
+            "name": "Home",
             "url": "#",
             "isActive": "true"
         },
@@ -24,10 +25,11 @@
             "name": "CMS"
         },
         {
-            "name": "Manage Category"
+            "name": "Manage Contents"
         }
     ],
-		"buttons": [
+		
+        "buttons": [
         {
             "name": "Add Category",
             "url": "#",
@@ -35,14 +37,13 @@
         },
         {
             "name": "Add Sub Category",
-            "url": "AddSubCategory.php"
+            "url": "#"
         },
         {
             "name": "Add Item",
-            "url": "AddItems.php"
+            "url": "#"
         }
     ],
-        
         "tabs": [
         {
             "name": "Add",
@@ -51,23 +52,12 @@
         },
         {
             "name": "View",
-            "url": "ViewCategory.php"
+            "url": "Viewnew.php"
         }
-    ],
+    ],        
         
-        "tabs": [
-        {
-            "name": "Add",
-            "url": "AddCategory.php"           
-        },
-        {
-            "name": "View",
-             "isActive": "true",
-            "url": "#"
-        }
-    ],
         "header": {
-            "text": "View Category",
+            "text": "Add  Category",
             //"iconClass": "glyphicon-hdd"
         }
     }
@@ -90,51 +80,38 @@
   <!-- main container -->
   <div class="content  topSpace">
     <div class="container-fluid">
-     
+     <div class="bk-pos"><a href="MngContentsAdv.php" class="btn btn-small"><i class="icon-backward"></i></a></div>
       <!-- Page Body -->
       <!-- Content Header -->
        <?php include('../includes/Contentheader.php');  ?>
-      <!-- end Content Header -->
-      <div class="padded"> 
-        <table class="table table-normal">
-          <tr>
-            <th width="25"><input type="checkbox" /></th>
-            <th width="35">Sl. #</th>
-            <th width="180">Category  Name</th>
-            <th>Description</th>
-            <th width="40">Edit</th>
-          </tr>
-          <tr>
-            <td><input type="checkbox" /></td>
-            <td>1</td>
-            <td>Category 1</td>
-            <td>Description</td>
-            <td><a href="AddCategory.php" class="btn btn-mini"><i class="icon-edit"></i></a></td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" /></td>
-            <td>2</td>
-            <td>Category 2</td>
-            <td>Description</td>
-            <td><a href="AddCategory.php" class="btn btn-mini"><i class="icon-edit"></i></a></td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" /></td>
-            <td>3</td>
-            <td>Category 3</td>
-            <td>Description</td>
-            <td><a href="AddCategory.php" class="btn btn-mini"><i class="icon-edit"></i></a></td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" /></td>
-            <td>4</td>
-            <td>Category 4</td>
-            <td>Description</td>
-            <td><a href="AddCategory.php" class="btn btn-mini"><i class="icon-edit"></i></a></td>
-          </tr>
-        </table>
        
-        </div>
+      <!-- end Content Header -->
+      <div class="padded">
+                    <div class="form-page">
+                        <div class="row-fluid form-wrapper">
+                            <!-- left column -->
+                            <div>
+                                <form runat="server">
+                                <div class="form-padded">
+                                    <div class="field-box">
+                                        <label>Category Name</label>
+                                       <input type="text" />
+                                    </div>
+                                   
+                                    <div class="field-box noborder">
+                                        <label>
+                                            Description:</label>
+                                        <textarea rows="4"></textarea>
+                                    </div>
+                                </div>
+                                <div class="formActions">
+                                    <a href="#" class="btn btn-success">Submit</a> <a href="#" class="btn btn-danger">Cancel</a>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
       </div>
       <!-- end Page Body -->
     </div>

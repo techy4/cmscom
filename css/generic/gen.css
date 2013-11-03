@@ -386,7 +386,8 @@ font-weight: bold;
 }
 .pagination ul>li a.active { background:#7fb94c!important; color:#fff;}
 .utils { position:absolute; right:10px; margin-top:5px;}
-.top-buttons { margin-bottom:10px; border-bottom:1px solid #CDCDCD;}
+.top-buttons { margin-bottom:10px; border-bottom:1px solid #CDCDCD; height:30px; width:100%;}
+.top-buttons .btn-group { float:right;}
 .top-buttons .btn-group>.btn:first-child {-moz-border-radius-bottomleft: 0px; -webkit-border-bottom-left-radius: 0px; border-bottom-left-radius: 0px;}
 .top-buttons .btn-group>.btn:last-child {-moz-border-radius-bottomright: 0px; -webkit-border-bottom-right-radius: 0px; border-bottom-right-radius: 0px;}
 .btn-success { background:#7fb94c;}
@@ -424,6 +425,8 @@ font-weight: bold;
 .field-box ul { list-style:none;}
 .field-box ul li { padding-bottom:5px;}
 .field-box ul li b { margin-right:10px;}
+.tbl-btm-bar { margin-top:10px;}
+.sq-padded { margin:10px; padding:10px; background:#fff;}
 /* Lastly, apply responsive CSS fixes as necessary */
 @media (max-width: 767px) {
   #footer {
