@@ -18,7 +18,10 @@
 <script src="../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 <script src="../js/vendor/jquery-1.9.1.min.js"></script>
 
+
+
 <script src="../js/custom/AddLinks.js"></script>
+<script src="../js/comFun.js"></script>
 
 <!--Page Level Variable Declaration-->
 <script>
@@ -83,18 +86,12 @@
             <div>
               <form id="AddLinksForm" action="" method="post">
                 <div class="form-padded">
-                <?php echo $result?>
+                
                   <div class="field-box" id="divdwnLinkLevel">
                     <label> Link Level</label>
                     <div class="ui-select">
                       <select name='dwnLinkLevel' id="dwnLinkLevel">
-                        <option selected>-- Select --</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
+                        
                       </select>
                     </div>
                   </div>
@@ -106,11 +103,11 @@
                   <div class="field-box">
                   <label>Is page need content</label>
                   <label class="radio">
-                                        <input type="radio" name="optionContent" checked> 
+                                        <input type="radio" name="optionContent" checked value="Yes"> 
                                         Yes
                                     </label>
                                     <label class="radio">
-                                        <input type="radio" name="optionContent">
+                                        <input type="radio" name="optionContent" value="No">
                                         No
                                   </label>
                  </div>
@@ -118,11 +115,11 @@
                    <div class="field-box">
                    <label>Link Type</label>
                                     <label class="radio">
-                                        <input type="radio" name="optionsLinkType" id="internal">
+                                        <input type="radio" name="optionsLinkType" id="internal" value="Internal">
                                         Internal
                                     </label>
                                     <label class="radio">
-                                        <input type="radio" name="optionsLinkType" id="external">
+                                        <input type="radio" name="optionsLinkType" id="external" value="external">
                                         External
                                   </label>
                               </div>           
@@ -140,11 +137,7 @@
                   <div class="field-box" id="internalField">
                     <label> Function Name</label>
                      <div class="ui-select">
-                      <select name="dwnFunctionName">
-                        <option selected>-- Select --</option>
-                         <option>CMS</option>
-                         <option>Feedback</option>
-                         <option>Contact Us</option>
+                      <select name="dwnFunctionName" id="dwnFunctionName">                        
                       </select>
                     </div>
                   </div>
@@ -178,16 +171,7 @@
 <script type="text/javascript">
 
         $(function () {
-          $("#internalField").hide();
-		  $("#externalField").hide();
-		  $("#internal").click(function(){
-			$("#internalField").show();
-			$("#externalField").hide();
-			})
-		 $("#external").click(function(){
-			$("#externalField").show();	
-			$("#internalField").hide();
-			})
+          
         });
     </script>
 </body>
