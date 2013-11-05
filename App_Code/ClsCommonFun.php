@@ -6,7 +6,7 @@ class ClsCommonFun extends ClsDBCon
 	public function ExecuteQuery($sqlQuery)
 	{
 		$con= $this->connectToDatabase();
-		$result	= mysqli_query($con,$sqlQuery);
+		$result	= mysqli_query($con,$sqlQuery);       
 		$this->closeConnection($con);
 		return $result;
 	}

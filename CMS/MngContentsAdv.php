@@ -1,3 +1,6 @@
+<?php 
+ require('MngContentsAdv_CB.php');
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -17,21 +20,19 @@
     var pageConf = {
         "breadCrumbs": [
         {
-            "name": "Dashboard",
+            "name": "Admin",
             "url": "#",
             "isActive": "true"
         },
+       
         {
-            "name": "CMS"
-        },
-        {
-            "name": "Manage Contents"
+            "name": "Manage Pages"
         }
     ],
         
         
         "header": {
-            "text": "Add Contents",
+            "text": "Manage Pages",
             //"iconClass": "glyphicon-hdd"
         }
     }
@@ -63,21 +64,9 @@
       	<div class="form-page">
                         <div class="row-fluid form-wrapper srchArea">
                             <b>Select Link :</b>
-                            <select name="">
-                            	<option>-- Select --</option>
-                                <option>Category 1</option>
-                            </select>
-                            
-                             <select name="">
-                            	<option>-- Select --</option>
-                                <option>Category 2</option>
-                            </select>
-                            
-                             <select name="">
-                            	<option>-- Select --</option>
-                                <option>Category 3</option>
-                            </select>
-                            <a href="#" class="btn btn-success">Search</a>                       
+                            <select name="" id="selFirstLink">
+                            	<option>-- All --</option>
+                             </select> 
                         </div>
                     </div>
                     
@@ -173,6 +162,7 @@
 <!-- end Footer -->
 <!-- framework.js icluded framework related js files -->
 <script src="../js/generic/framework.js"></script>
-
+<script src="../js/generic/connection.js"></script>
+<script src="../js/custom/MngContentsAdv.js"></script>
 </body>
 </html>
