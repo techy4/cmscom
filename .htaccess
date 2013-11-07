@@ -70,3 +70,9 @@ RewriteRule .* - [F]
 		
 # Application For Settings# 
 		RewriteRule    ^changePassword/([0-9]+)/([0-9]+)?$													settings/changePassword.php?GL=$1&PL=$2		
+		
+php_flag display_startup_errors on
+php_flag display_errors on
+php_flag html_errors on
+php_flag  log_errors on
+#php_value error_log  /home/path/public_html/domain/PHP_errors.log
