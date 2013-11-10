@@ -33,11 +33,11 @@
             //echo ($strLinkType);          
              if(trim($_POST['optionsLinkType'])=="Internal"){
                     $dwnFunctionName=trim($_REQUEST['dwnFunctionName']);
-                    $sql ="call cmscom.usp_add_managelink('".$strLinkLevel."','".$strParentId."','".$strLinkname."',".$bitContent.",'".$strLinkType."','".$strLinkTarget."',".$dwnFunctionName.",'','77', @out)";
+                    $sql ="call usp_add_managelink('".$strLinkLevel."','".$strParentId."','".$strLinkname."',".$bitContent.",'".$strLinkType."','".$strLinkTarget."',".$dwnFunctionName.",'','77', @out)";
                 }
             else{
                     $txtLinkUrl=trim($_REQUEST['txtLinkUrl']);
-                    $sql ="call cmscom.usp_add_managelink('".$strLinkLevel."','".$strParentId."','".$strLinkname."','".$bitContent."','".$strLinkType."','".$strLinkTarget."',0,'".$txtLinkUrl."','77', @out)";
+                    $sql ="call usp_add_managelink('".$strLinkLevel."','".$strParentId."','".$strLinkname."','".$bitContent."','".$strLinkType."','".$strLinkTarget."',0,'".$txtLinkUrl."','77', @out)";
                  }
             
 			//$strFunctionName	= trim($_REQUEST['dwnFunctionName']);		        
