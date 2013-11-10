@@ -86,7 +86,7 @@
             <td>External </td>
             <td>www.google.com</td>
             <td>New window</td>
-            <td><a href="AddLinks.php" class="btn btn-mini"><i class="icon-edit"></i></a></td>
+            <td><a href="AddLinks.php?y=2" class="btn btn-mini"><i class="icon-edit"></i></a></td>
           </tr>
           <tr>
             <td><input type="checkbox" /></td>

@@ -1,8 +1,36 @@
 ﻿$(document).ready(function () {
-    var values = []; //store the no of dropdown created
 
-    //Fill No of Level  
-    fillParentLevel();
+    var status = 'U';
+    var values = []; //store the no of dropdown created
+    var parentValue = [];
+    var selctedJ = 0;
+    //Fill No of Level 
+    if (status == 'U')
+        fillParentLevel4U();
+    else
+        fillParentLevel();
+
+    $(document).bind("getULevelData", function (e, data) {
+        var j = 0;
+
+        $.each(data, function (index, value) {
+            j = value.maxlevel_id;
+            selctedJ = value.int_link_level;
+            parentValue = value.parent_id.split(",");
+            $('#txtLinkname').val(value.vch_link_name);
+        });
+        $('#dwnLinkLevel').html('');
+        $('#dwnLinkLevel').append(" <option value='Select'>Select</option>");
+
+        for (i = 1; i <= j; i++) {
+            $('#dwnLinkLevel').append(' <option data-id=' + i + ' value="' + i + '" >' + i + '</option>');
+        }
+        $("#dwnLinkLevel option").filter(function () {
+            return $(this).text() == selctedJ;
+        }).prop('selected', true);
+        $("#dwnLinkLevel").trigger("change");
+
+    });
     $(document).bind("getLevelData", function (e, data) {
         var j = 0;
         $.each(data, function (index, value) {
@@ -34,6 +62,7 @@
             }
         }
         //Add Dropdown
+        var uLevel = 3;
         if ((this.value) > 1) {
             for (i = (this.value) - 1; i > 0; i--) {
                 var tblHtml = "";
@@ -59,7 +88,13 @@
                             $("#dwn" + (next) + "stLevel").append(' <option data-id=' + value.ID + ' value="' + value.ID + '" >' + value.Child + '</option>');
                         });
                         $(document).unbind('getChildData');
-
+                        if (status == 'U') {
+                            $("#dwn" + (next) + "stLevel option").filter(function () {
+                                return $(this).val() == parentValue[selctedJ - uLevel];
+                            }).prop('selected', true);
+                            $("#dwn" + (next) + "stLevel").trigger("change");
+                        }
+                        uLevel = uLevel + 1;
                     });
                     $("#dwn" + (next) + "stLevel").prop("disabled", false);
                 });
@@ -73,9 +108,18 @@
                 $.each(data, function (index, value) {
                     $('#dwn1stLevel').append(' <option data-id=' + value.ID + ' value="' + value.ID + '" >' + value.Parent + '</option>');
                 });
+
+                //var parentValue = [];
+                //Fill No of Level 
+                if (status == 'U') {
+                    $("#dwn1stLevel option").filter(function () {
+                        return $(this).val() == parentValue[selctedJ - 2];
+                    }).prop('selected', true);
+                    $("#dwn1stLevel").trigger("change");
+                }
             });
         }
-        
+
     });
 
     $("#internalField").hide();
@@ -94,13 +138,17 @@
 
 })
 
-function fillFunctionName() {
+function fillParentLevel4U() {
     var paramObj = {};
-    getDataFromSvr("getFunctionData", paramObj, { classHir: 0, returnEvent: "getFunctionData" });
+    getDataFromSvr("getULevelData", paramObj, { classHir: 0, returnEvent: "getULevelData" });
 }
 function fillParentLevel() {
     var paramObj = {};
     getDataFromSvr("getLevelData", paramObj, { classHir: 0, returnEvent: "getLevelData" });
+}
+function fillFunctionName() {
+    var paramObj = {};
+    getDataFromSvr("getFunctionData", paramObj, { classHir: 0, returnEvent: "getFunctionData" });
 }
 function fillParentName() {
     var paramObj = {};

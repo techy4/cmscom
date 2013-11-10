@@ -98,7 +98,7 @@
                   
                   <div class="field-box">
                     <label>Link Name</label>
-                    <input type="text" name="txtLinkname" />
+                    <input type="text" name="txtLinkname" id="txtLinkname" />
                   </div>
                   <div class="field-box">
                   <label>Is page need content</label>
