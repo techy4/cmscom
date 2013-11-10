@@ -1,10 +1,17 @@
 <?php
 class ClsDBCon 
 {
-    private $host="localhost";
-    private $username="root";
-    private $password='csmpl@123';
-    private $database="cmscom";
+//fOR lOCALHOST
+    //private $host="localhost";
+    //private $username="root";
+    //private $password='csmpl@123';
+    //private $database="cmscom";
+    
+    private $host="techy4cmsecom.db.11743472.hostedresource.com";
+    private $username="techy4cmsecom";
+    private $password='Techy4@123';
+    private $database="techy4cmsecom";
+    
     private $myconn;
 	//================ create a function for connect database=================
     function connectToDatabase() 
